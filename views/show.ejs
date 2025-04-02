@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= filename %> - NoteHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-['Inter']">
+    <div class="main w-full min-h-screen bg-zinc-900">
+      <div class="max-w-3xl mx-auto p-8">
+        <a
+          href="/"
+          class="text-blue-400 text-sm inline-flex items-center mb-8 tracking-tight hover:text-blue-300 transition-all duration-300">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to Notes
+        </a>
+        
+        <div class="space-y-6">
+          <h1 class="text-white text-3xl font-semibold tracking-tight"> <%= filename %> </h1>
+          <div class="h-px bg-zinc-800"></div>
+          <div class="prose prose-invert max-w-none">
+            <p class="text-zinc-300 text-lg leading-relaxed">
+              <%= data %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
