@@ -8,7 +8,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"public")));
 
-// Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
@@ -21,6 +20,12 @@ app.get("/",(req,res)=>{
             return res.status(500).send('Error reading notes');
         }
         res.render("index",{files:files});
+    })
+})
+
+app.post("/create",(req,res)=>{
+    fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`, req.body.details, (err)=>{
+        res.redirect("/");
     })
 })
 
@@ -45,11 +50,6 @@ app.post("/edit",(req,res)=>{
     })
 })
 
-app.post("/create",(req,res)=>{
-    fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`, req.body.details, (err)=>{
-        res.redirect("/");
-    })
-})
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
