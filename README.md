@@ -1,0 +1,1 @@
+NoteHub – A fast, minimalist note-taking app built with Node.js and Express. Features include instant note creation, a sleek dark theme, quick edits, and no sign-up. Uses EJS and TailwindCSS for a smooth UI. Just clone, install (npm install), and run (npm start). Perfect for quick, distraction-free notes. 🚀
